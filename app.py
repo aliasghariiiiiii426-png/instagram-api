@@ -79,7 +79,7 @@ def exchange():
 # ----------------------------
 @app.route("/profile")
 def profile():
-    token = 'IGAAJ2XaZAwPfVBZAFRCMFo4bUJ0R1Rzd0w0Ry1LcGFPQWFMcW9CVUJVdGZAjclVsUWNwakJlRUpXVlRSRTIza08xSldkVzktaThPSUE1UXJCbUgzY0FuTkJMd0lpSGxDeDIzb2tUUkpXNV9MVFgyZAjMwektGQ2p3U21qZAzlYLWR6TQZDZD'
+    token = 'IGAAJ2XaZAwPfVBZAFE4b3VGN09fcTI1OTI1Ulp1QndjbEYyeTlpU2lKSncyTExUZATJmeVV3MGJpWnZAhQm1oSTV1LUtzVUFDUmVub0FkS2Q0RFVldkhoZAjNKX2Y2TEhLanhMY2d6SWVDa05lOUVuUUpPaTdMdFJWLTFwbDd1VjZAVbwZDZD'
     if not token:
         return "No token. Please login again.", 400
 
