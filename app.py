@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "your-random-secret-key"  # Needed for session storage
+app.secret_key = "jJP5VAfhmSm1mWfvark3oI6jxsZTT3C5"  # Needed for session storage
 
 APP_ID = os.getenv("APP_ID")
 APP_SECRET = os.getenv("APP_SECRET")
