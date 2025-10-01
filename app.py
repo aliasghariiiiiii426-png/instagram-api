@@ -30,25 +30,18 @@ def login():
 # ----------------------------
 # Step 2: OAuth Callback
 # ----------------------------
-@app.route("/callback")
-def callback():
-    code = request.args.get("code")
-    if not code:
-        return "Error: No code received", 400
+@app.route("/webhook", methods=["GET"])
+def webhook_verify():
+    mode = request.args.get("hub.mode")
+    token = request.args.get("hub.verify_token")
+    challenge = request.args.get("hub.challenge")
 
-    token_url = "https://graph.facebook.com/v21.0/oauth/access_token"
-    params = {
-        "client_id": APP_ID,
-        "redirect_uri": REDIRECT_URI,
-        "client_secret": APP_SECRET,
-        "code": code
-    }
-
-    res = requests.get(token_url, params=params).json()
-    access_token = res.get("access_token")
-    session["short_lived_token"] = access_token
-
-    return f"Short-lived token received! <a href='/exchange'>Exchange for long-lived</a>"
+    if mode == "subscribe" and token == VERIFY_TOKEN:
+        print("Webhook verified successfully!")
+        return challenge, 200
+    else:
+        print("Webhook verification failed.")
+        return "Verification failed", 403
 
 
 # ----------------------------
