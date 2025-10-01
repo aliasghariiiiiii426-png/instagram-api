@@ -79,7 +79,7 @@ def exchange():
 # ----------------------------
 @app.route("/profile")
 def profile():
-    token = session.get("long_lived_token")
+    token = 'IGAAJ2XaZAwPfVBZAFRCMFo4bUJ0R1Rzd0w0Ry1LcGFPQWFMcW9CVUJVdGZAjclVsUWNwakJlRUpXVlRSRTIza08xSldkVzktaThPSUE1UXJCbUgzY0FuTkJMd0lpSGxDeDIzb2tUUkpXNV9MVFgyZAjMwektGQ2p3U21qZAzlYLWR6TQZDZD'
     if not token:
         return "No token. Please login again.", 400
 
